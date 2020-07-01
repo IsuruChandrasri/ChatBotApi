@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" type ="text/css" href="css/chatbot.css">
+</head>
+<body>
+
+<h2>NetExam Chatbot Window</h2>
+<p>Click on the button at the bottom of this page to open the chat form.</p>
+<p>Note that the button and the form is fixed - they will always be positioned to the bottom of the browser window.</p>
+<div class="chat-bubble-container">
+  <span>
+    <div class="chat-bubble">
+      <div class="watson-icon" onclick="openForm()">
+      </div>
+    </div>
+  </span>
+</div>
+
+<div class="chat-popup" id="myForm" >
+    <button type="button" class="close-button" onclick="closeForm()">Close</button>
+    <h4>NetExam Chatbot</h4>
+  <div class="form-container" id="chat-body" >
+    <div class="container">
+      <img src="images/netexam.png" alt="Avatar" style="widows: 50%;">
+      <p>Hello. My name is Netexam and I'm a chatbot. How can I help you? You can ask me about question or information about NetExam E-learning platform.</p>
+      <span class="time-right" id="time"></span>
+    </div>
+
+    <div class="popup-messages-footer">
+        <input id="status_message" placeholder="Type a message..." name="message">
+        <div class="btn-footer">
+        <button id = "sendButton" type="submit" class="btn" onclick="sendMessage()">Send</button>
+        </div>
+        </div>
+      </div>
+
+
+</div>
+<script>
+  var dt = new Date();
+  document.getElementById("time").innerHTML = dt.toLocaleTimeString('en-US', { hour12: true, 
+            hour: "numeric", 
+            minute: "numeric"});
+</script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script> 
+<script src="js/chatbot.js"></script>
+
+</body>
+</html>
